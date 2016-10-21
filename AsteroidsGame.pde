@@ -1,5 +1,5 @@
 //your variable declarations here
-SpaceShip bob = new SpaceShip();
+Spaceship bob = new Spaceship();
 public void setup() 
 {
   //your code here
@@ -9,40 +9,59 @@ public void setup()
 public void draw() 
 {
   //your code here
+  background(0);
   bob.show();
-  if(mousePressed){
-    bob.accelerate(10.0);
+  bob.move();
+}
+public void keyPressed(){
+  switch(key){
+    case 'w':
+    bob.accelerate(.5);
+    break;
+    case 's':
+    bob.accelerate(-.5);
+    break;
+    case 'd':
+    bob.rotate(5);
+    break;
+    case 'a':
+    bob.rotate(-5);
+    break;
+    case 'h':
+    bob.setDirectionX(0);
+    bob.setDirectionY(0);
+    bob.setPointDirection((int)(Math.random() * 360));
+    bob.setX((int)(Math.random() * 400));
+    bob.setY((int)(Math.random() * 400));
+    break;
   }
 }
-class SpaceShip extends Floater  
+class Spaceship extends Floater  
 { 
-int dX, dY;  
-   SpaceShip(){
-    corners = 7;
-    int [] xS = {-10, -3, 2, 10, 2, -3, -10};
-    int[] yS = {5, -5, -3, -1, 0, 1, 3};
-    xCorners = xS;
-    yCorners = yS;
-    myColor = 255;
-    myCenterX = 200;
-    myCenterY = 200;
-    myDirectionX = 0;
-    myDirectionY = 0;
-    myPointDirection = 0;
-    dY = 0;
-    dX = 0;
-   } 
+public Spaceship(){
+      corners = 7;
+      int [] xS = {-5, 2, 7, 15, 7, 2, -5};
+      int[] yS = {-14, -9, -3, 0, 3, 9, 14};
+      xCorners = xS;
+      yCorners = yS;
+      myColor = 255;
+      myCenterX = 200;
+      myCenterY = 200;
+      myDirectionX = 0;
+      myDirectionY = 0;
+      myPointDirection = 0;
+    } 
 public void setX(int x){
-  dX = x;
+  myCenterX = x;
 }
 public int getX(){
-  return dX;
+  return (int)myCenterX;
 }
 public void setY(int y){
-  dY = y;
+  myCenterY = y;
 }
 public int getY(){
-  return dY;
+  return (int)myCenterY;
 }
 public void setDirectionX(double x){
   myDirectionX = x;
