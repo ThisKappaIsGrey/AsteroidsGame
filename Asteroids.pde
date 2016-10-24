@@ -1,0 +1,3 @@
+class Asteriod extends Floater{
+
+}
