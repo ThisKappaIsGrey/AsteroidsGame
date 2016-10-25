@@ -1,17 +1,22 @@
 //your variable declarations here
 Spaceship bob = new Spaceship();
-public void setup() 
+Asteriod jim = new Asteriod();
+public void setup()
 {
   //your code here
   size(400, 400);
   background(0);
+  /*for(int i = 0; i < 25; i++){
+    fill(255);
+    ellipse((int)(Math.random() * 400),(int)(Math.random() * 400), 10, 10);
+  }*/
 }
-public void draw() 
+public void draw()
 {
   //your code here
-  background(0);
   bob.show();
   bob.move();
+  jim.show();
 }
 public void keyPressed(){
   switch(key){
@@ -36,4 +41,3 @@ public void keyPressed(){
     break;
   }
 }
-
