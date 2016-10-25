@@ -6,7 +6,7 @@ public Spaceship(){
       int[] yS = {-14, -9, -3, 0, 3, 9, 14};
       xCorners = xS;
       yCorners = yS;
-      myColor = 255;
+      myColor = color(255, 255, 0);
       myCenterX = 200;
       myCenterY = 200;
       myDirectionX = 0;

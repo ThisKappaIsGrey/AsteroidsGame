@@ -1,22 +1,28 @@
 //your variable declarations here
 Spaceship bob = new Spaceship();
 Asteriod jim = new Asteriod();
+Star [] kappa;
 public void setup()
 {
   //your code here
   size(400, 400);
   background(0);
-  /*for(int i = 0; i < 25; i++){
-    fill(255);
-    ellipse((int)(Math.random() * 400),(int)(Math.random() * 400), 10, 10);
-  }*/
+  kappa = new Star[100];
+  for(int i = 0; i < kappa.length; i++){
+    kappa[i] = new Star();
+  }
 }
 public void draw()
 {
   //your code here
+  background(0);
+  for(int i = 0; i < kappa.length; i++){
+    kappa[i].show();
+  }
   bob.show();
   bob.move();
   jim.show();
+  jim.move();
 }
 public void keyPressed(){
   switch(key){
