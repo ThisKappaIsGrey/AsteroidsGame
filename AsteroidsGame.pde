@@ -2,12 +2,13 @@
 Spaceship bob = new Spaceship();
 Asteriod jim = new Asteriod();
 Star [] kappa;
+HashMap<String, Boolean> keys = new HashMap<String, Boolean>();
 public void setup()
 {
   //your code here
-  size(400, 400);
+  size(1000, 1000);
   background(0);
-  kappa = new Star[100];
+  kappa = new Star[1000];
   for(int i = 0; i < kappa.length; i++){
     kappa[i] = new Star();
   }
@@ -46,4 +47,8 @@ public void keyPressed(){
     bob.setY((int)(Math.random() * 400));
     break;
   }
+public void functions(){
+  switch(key){}
+}
+//keypressed, set hashmap to true, keyreleased, set it to false. 
 }
