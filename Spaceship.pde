@@ -1,5 +1,5 @@
 class Spaceship extends Floater  
-{ 
+{
 public Spaceship(){
       corners = 7;
       int [] xS = {-5, 2, 7, 15, 7, 2, -5};
@@ -12,7 +12,7 @@ public Spaceship(){
       myDirectionX = 0;
       myDirectionY = 0;
       myPointDirection = 0;
-    } 
+    }
 public void setX(int x){
   myCenterX = x;
 }
