@@ -1,6 +1,6 @@
 //your variable declarations here
 Spaceship bob = new Spaceship();
-Asteriod jim = new Asteriod();
+ArrayList<Asteriod> asteroids;
 Star [] kappa;
 HashMap<String, Boolean> keys = new HashMap<String, Boolean>();
 public void setup()
@@ -9,8 +9,12 @@ public void setup()
   size(1000, 1000);
   background(0);
   kappa = new Star[1000];
+  asteroids = new ArrayList <Asteriod>();
   for(int i = 0; i < kappa.length; i++){
     kappa[i] = new Star();
+  }
+  for(int i=0; i < 100; i++){
+    asteroids.add(new Asteriod());
   }
 }
 public void draw()
@@ -22,8 +26,10 @@ public void draw()
   }
   bob.show();
   bob.move();
-  jim.show();
-  jim.move();
+  for(int i=0; i < asteroids.size(); i++){
+    asteroids.get(i).show();
+    asteroids.get(i).move();
+  }
 }
 public void keyPressed(){
   switch(key){
@@ -47,8 +53,6 @@ public void keyPressed(){
     bob.setY((int)(Math.random() * 400));
     break;
   }
-public void functions(){
-  switch(key){}
-}
+
 //keypressed, set hashmap to true, keyreleased, set it to false. 
 }
