@@ -2,7 +2,7 @@
 Spaceship bob = new Spaceship();
 ArrayList<Asteriod> asteroids;
 Star [] kappa;
-HashMap<String, Boolean> keys = new HashMap<String, Boolean>();
+//HashMap<String, Boolean> keys = new HashMap<String, Boolean>();
 public void setup()
 {
   //your code here
@@ -34,10 +34,10 @@ public void draw()
 public void keyPressed(){
   switch(key){
     case 'w':
-    bob.accelerate(.5);
+    bob.accelerate(.1);
     break;
     case 's':
-    bob.accelerate(-.5);
+    bob.accelerate(-.1);
     break;
     case 'd':
     bob.rotate(5);

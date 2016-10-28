@@ -1,19 +1,19 @@
 class Asteriod extends Floater{
 private int rotSpeed, s;
   Asteriod(){
-    s = (int)(Math.random() * 5);
+    s = (int)(Math.random() * 2);
     corners = 4;
     int [] xS = {-5*s, 5*s, 5 * s, -5*s};
     int[] yS = {-5*s, -5*s, 5*s, 5*s};
     xCorners = xS;
     yCorners = yS;
-    myColor = 255;
-    myCenterX = 100;
-    myCenterY = 100;
-    myDirectionX = (int)(Math.random() * 11) - 6;
-    myDirectionY = (int)(Math.random() * 11) - 6;
+    myColor = color(255, 0, 0);
+    myCenterX = (int)(Math.random() * 1000);
+    myCenterY = (int)(Math.random() * 1000);
+    myDirectionX = (Math.random() * 5) - 2;
+    myDirectionY = (Math.random() * 5) - 2;
     myPointDirection = (int)(Math.random() * 11) - 6;
-    rotSpeed = (int)(Math.random() * 10);
+    rotSpeed = (int)(Math.random() * 3);
   }
   public void setX(int x){
     myCenterX = x;
