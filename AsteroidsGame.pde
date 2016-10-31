@@ -6,7 +6,7 @@ Star [] kappa;
 public void setup()
 {
   //your code here
-  size(1000, 1000);
+  size(1000, 1000, P2D);
   background(0);
   kappa = new Star[1000];
   asteroids = new ArrayList <Asteriod>();

@@ -1,3 +1,5 @@
-class Bullet{
-	
+class Bullet {//extends Floater{
+	Bullet(){
+
+	}
 }
