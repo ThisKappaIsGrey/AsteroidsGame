@@ -2,6 +2,7 @@
 Spaceship bob = new Spaceship();
 ArrayList<Asteriod> asteroids;
 Star [] kappa;
+Bullet hitler = new Bullet();
 //HashMap<String, Boolean> keys = new HashMap<String, Boolean>();
 public void setup()
 {
@@ -30,6 +31,7 @@ public void draw()
     asteroids.get(i).show();
     asteroids.get(i).move();
   }
+  hitler.show();
 }
 public void keyPressed(){
   switch(key){
