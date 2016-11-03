@@ -2,8 +2,8 @@
 Spaceship bob = new Spaceship();
 ArrayList<Asteriod> asteroids;
 Star [] kappa;
-Bullet hitler = new Bullet();
-//HashMap<String, Boolean> keys = new HashMap<String, Boolean>();
+Bullet hitler = new Bullet(bob);
+HashMap<String, Boolean> keys = new HashMap<String, Boolean>();
 public void setup()
 {
   //your code here
@@ -17,6 +17,12 @@ public void setup()
   for(int i=0; i < 100; i++){
     asteroids.add(new Asteriod());
   }
+ //hash maps
+keys.put("w", false);
+keys.put("a", false);
+keys.put("s", false);
+keys.put("d", false);
+keys.put("h", false); 
 }
 public void draw()
 {
@@ -33,28 +39,34 @@ public void draw()
   }
   hitler.show();
 }
+
 public void keyPressed(){
   switch(key){
     case 'w':
-    bob.accelerate(.1);
+    keys.put("w", true);
     break;
     case 's':
-    bob.accelerate(-.1);
+    keys.put("s", true);
     break;
     case 'd':
-    bob.rotate(5);
+    
     break;
     case 'a':
-    bob.rotate(-5);
+  
     break;
     case 'h':
-    bob.setDirectionX(0);
-    bob.setDirectionY(0);
-    bob.setPointDirection((int)(Math.random() * 360));
-    bob.setX((int)(Math.random() * 400));
-    bob.setY((int)(Math.random() * 400));
+   
     break;
   }
 
 //keypressed, set hashmap to true, keyreleased, set it to false. 
+// bob.accelerate(.1); bob.accelerate(-.1); code for accelration
+//  bob.rotate(-5); bob.rotate(5); rotate code
+/* hyperspace code
+ bob.setDirectionX(0);
+    bob.setDirectionY(0);
+    bob.setPointDirection((int)(Math.random() * 360));
+    bob.setX((int)(Math.random() * 400));
+    bob.setY((int)(Math.random() * 400));
+    */
 }
