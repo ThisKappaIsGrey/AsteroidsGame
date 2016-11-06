@@ -1,5 +1,6 @@
-class Spaceship extends Floater  
+class Spaceship extends Floater
 {
+public final int SPEED_LIMIT;
 public Spaceship(){
       corners = 7;
       int [] xS = {-5, 2, 7, 15, 7, 2, -5};
@@ -12,7 +13,40 @@ public Spaceship(){
       myDirectionX = 0;
       myDirectionY = 0;
       myPointDirection = 0;
+      SPEED_LIMIT = 5;
     }
+public void move(){
+  //Follow the SPeed LImit
+    if(myDirectionX > SPEED_LIMIT) {
+      myDirectionX = SPEED_LIMIT;
+    }
+    if(myDirectionX < -(SPEED_LIMIT)) {
+      myDirectionX = -(SPEED_LIMIT);
+    }
+    if(myDirectionY > SPEED_LIMIT) {
+      myDirectionY = SPEED_LIMIT;
+    }
+    if(myDirectionY < -(SPEED_LIMIT)) {
+      myDirectionY = -(SPEED_LIMIT);
+    }
+    super.move();
+}
+public void pressTheBreak(){
+  if(myDirectionX > 0){
+    myDirectionX -= 0.25;
+  }else if(myDirectionX < 0){
+    myDirectionX += 0.25;
+  }else{
+    myDirectionX = 0;
+  }
+  if(myDirectionY > 0){
+    myDirectionY -= 0.25;
+  }else if(myDirectionY < 0){
+    myDirectionY += 0.25;
+  }else{
+    myDirectionX = 0;
+  }
+}
 public void setX(int x){myCenterX = x;}
 public int getX(){return (int)myCenterX;}
 public void setY(int y){myCenterY = y;}
