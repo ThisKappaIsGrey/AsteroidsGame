@@ -10,8 +10,8 @@ public Bullet(Spaceship bob){
 		myCenterY = bob.getY();
 		myPointDirection = bob.getPointDirection();
 		dRadians = myPointDirection*(Math.PI/180);
-		myDirectionX = 5 * Math.cos(dRadians) + bob.getDirectionX();
-    myDirectionY = 5 * Math.cos(dRadians) + bob.getDirectionY();
+		myDirectionX = 20 * Math.cos(dRadians) + bob.getDirectionX();
+    myDirectionY = 20 * Math.cos(dRadians) + bob.getDirectionY();
 	}
 	public void show() {
 		fill(0, 255, 0);
