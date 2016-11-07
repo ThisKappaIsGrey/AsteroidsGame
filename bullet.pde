@@ -1,17 +1,17 @@
 class Bullet extends Floater{
 double dRadians;
-public Bullet(Spaceship bob){
+public Bullet(Spaceship rustBucket){
   corners = 4;
     int[] xC = {2,2,-2,-2};
     int[] yC = {1,-1,-1,1};
     xCorners = xC;
     yCorners = yC;
-		myCenterX = bob.getX();
-		myCenterY = bob.getY();
-		myPointDirection = bob.getPointDirection();
+		myCenterX = rustBucket.getX();
+		myCenterY = rustBucket.getY();
+		myPointDirection = rustBucket.getPointDirection();
 		dRadians = myPointDirection*(Math.PI/180);
-		myDirectionX = 20 * Math.cos(dRadians) + bob.getDirectionX();
-    myDirectionY = 20 * Math.cos(dRadians) + bob.getDirectionY();
+		myDirectionX = 20 * Math.cos(dRadians) + rustBucket.getDirectionX();
+    myDirectionY = 20 * Math.sin(dRadians) + rustBucket.getDirectionY();
 	}
 	public void show() {
 		fill(0, 255, 0);

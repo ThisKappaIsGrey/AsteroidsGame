@@ -52,10 +52,18 @@ public void draw()
     bullets.get(i).move();
   }
   whenKeyIsPressed();
+  checkForCollisoins();
 }
 
 public void checkForCollisoins(){
-  //for(int i = 0; i )
+  for(int i = bullets.size() - 2; i >=0; i--){
+    for(int o = asteroids.size() - 2; o >=0; o--){
+      if(dist(asteroids.get(o).getX(), asteroids.get(o).getY(),bullets.get(o).getX(), bullets.get(o).getY()) < 10){
+        bullets.remove(i);
+        asteroids.remove(o);
+    }
+  }
+}
 }
 public void keyPressed(){
   switch(key){
