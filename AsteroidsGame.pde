@@ -56,11 +56,12 @@ public void draw()
 }
 
 public void checkForCollisoins(){
-  for(int b = bullets.size(); b >=0; b--){
-    for(int a = asteroids.size(); a >=0; a--){
+  for(int b = bullets.size()-1; b >=0; b--){
+    for(int a = asteroids.size()-1; a >=0; a--){
       if(dist(asteroids.get(a).getX(), asteroids.get(a).getY(),bullets.get(b).getX(), bullets.get(b).getY()) < 10){
         bullets.remove(b);
         asteroids.remove(a);
+        break;
     }
   }
 }
