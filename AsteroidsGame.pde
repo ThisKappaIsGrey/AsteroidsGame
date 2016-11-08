@@ -51,16 +51,16 @@ public void draw()
     bullets.get(i).show();
     bullets.get(i).move();
   }
-  whenKeyIsPressed();
   checkForCollisoins();
+  whenKeyIsPressed();
 }
 
 public void checkForCollisoins(){
-  for(int i = bullets.size() - 2; i >=0; i--){
-    for(int o = asteroids.size() - 2; o >=0; o--){
-      if(dist(asteroids.get(o).getX(), asteroids.get(o).getY(),bullets.get(o).getX(), bullets.get(o).getY()) < 10){
-        bullets.remove(i);
-        asteroids.remove(o);
+  for(int b = bullets.size(); b >=0; b--){
+    for(int a = asteroids.size(); a >=0; a--){
+      if(dist(asteroids.get(a).getX(), asteroids.get(a).getY(),bullets.get(b).getX(), bullets.get(b).getY()) < 10){
+        bullets.remove(b);
+        asteroids.remove(a);
     }
   }
 }
