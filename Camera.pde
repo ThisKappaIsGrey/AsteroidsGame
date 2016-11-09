@@ -1,9 +1,9 @@
 class Camera{
-public Pvector pos;
+public PVector pos;
 	Camera(){
-		pos = new Pvector(0, 0);
+		pos = new PVector(0, 0);
 	}
-	public void draw(MyShip ship) {
+	public void draw(Spaceship ship) {
     pos.x += ship.getDirectionX();
     pos.y += ship.getDirectionY();
   }

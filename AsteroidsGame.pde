@@ -1,17 +1,18 @@
 //TODO
 //make a camera that follows the spaceship around
-// make bullets destroy asteroids
-public final int MAP_WIDTH = 1000;
-public final int MAP_HEIGHT = 1000;
-Spaceship rustBucket = new Spaceship();
-ArrayList<Asteriod> asteroids = new ArrayList <Asteriod>();
-Star [] stars = new Star[10];;
-ArrayList<Bullet> bullets = new ArrayList<Bullet>();
-HashMap<String, Boolean> keys = new HashMap<String, Boolean>();
+/*variables */
+public final int MAP_WIDTH = 5000;
+public final int MAP_HEIGHT = 5000;
+public Spaceship rustBucket = new Spaceship();
+public ArrayList<Asteriod> asteroids = new ArrayList <Asteriod>();
+public Star [] stars = new Star[10];
+public ArrayList<Bullet> bullets = new ArrayList<Bullet>();
+public HashMap<String, Boolean> keys = new HashMap<String, Boolean>();
+public Camera camera;
 public void setup()
 {
   //your code here
-  size(1000, 1000, P2D);
+  size(400, 400, P2D);
   background(0);
   //initializes the new stars
   for(int i = 0; i < stars.length; i++){
@@ -21,6 +22,8 @@ public void setup()
   for(int i=0; i < 100; i++){
     asteroids.add(new Asteriod());
   }
+  //initializes camera
+  camera = new Camera();
  //hash maps for the keys
 keys.put("w", false);
 keys.put("a", false);
@@ -33,6 +36,9 @@ keys.put("q", false);
 //draw function.
 public void draw()
 {
+  // camera
+  translate(-camera.pos.x, -camera.pos.y);
+  camera.draw(rustBucket);
   background(0);
   //shows the Spaceship, and move
   rustBucket.show();
@@ -53,6 +59,7 @@ public void draw()
   }
   checkForCollisoins();
   whenKeyIsPressed();
+
 }
 
 public void checkForCollisoins(){
@@ -114,6 +121,8 @@ public void keyReleased(){
     break;
     case ' ':
     keys.put(" ", false);
+    rustBucket.setDirectionX(0);
+    rustBucket.setDirectionY(0);
     break;
   }
 }
