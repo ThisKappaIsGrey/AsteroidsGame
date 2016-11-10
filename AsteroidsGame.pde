@@ -5,7 +5,7 @@ public final int MAP_WIDTH = 5000;
 public final int MAP_HEIGHT = 5000;
 public Spaceship rustBucket = new Spaceship();
 public ArrayList<Asteriod> asteroids = new ArrayList <Asteriod>();
-public Star [] stars = new Star[10];
+public Star [] stars = new Star[5000];
 public ArrayList<Bullet> bullets = new ArrayList<Bullet>();
 public HashMap<String, Boolean> keys = new HashMap<String, Boolean>();
 public Camera camera;
@@ -118,11 +118,11 @@ public void keyReleased(){
     break;
     case'q':
     keys.put("q", false);
+    rustBucket.setDirectionX(0);
+    rustBucket.setDirectionY(0);
     break;
     case ' ':
     keys.put(" ", false);
-    rustBucket.setDirectionX(0);
-    rustBucket.setDirectionY(0);
     break;
   }
 }
@@ -149,6 +149,7 @@ public void whenKeyIsPressed(){
   if(keys.get("q") == true){
     rustBucket.pressTheBreak();
   }
+
   if(keys.get(" ") == true){
     bullets.add(new Bullet(rustBucket));
   }
