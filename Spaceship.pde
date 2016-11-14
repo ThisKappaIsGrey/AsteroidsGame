@@ -8,8 +8,8 @@ public Spaceship(){
       xCorners = xS;
       yCorners = yS;
       myColor = color(255, 255, 0);
-      myCenterX = 200;
-      myCenterY = 200;
+      myCenterX = MAP_WIDTH/2;
+      myCenterY = MAP_HEIGHT/2;
       myDirectionX = 0;
       myDirectionY = 0;
       myPointDirection = 0;

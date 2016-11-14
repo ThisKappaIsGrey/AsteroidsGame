@@ -1,5 +1,6 @@
 class Bullet extends Floater{
-double dRadians;
+private double dRadians;
+private int time;
 public Bullet(Spaceship rustBucket){
   corners = 4;
     int[] xC = {2,2,-2,-2};
@@ -17,6 +18,12 @@ public Bullet(Spaceship rustBucket){
 		fill(0, 255, 0);
 		ellipse((float)myCenterX, (float)myCenterY, 2, 2);
 	}
+  public void move(){
+    super.move();
+    time++;
+  }
+
+  public int getTime(){return time;}
   public void setX(int x){myCenterX = x;}
   public int getX(){return (int)myCenterX;}
   public void setY(int y){myCenterY = y;}

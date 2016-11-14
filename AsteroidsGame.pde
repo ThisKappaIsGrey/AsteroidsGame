@@ -1,5 +1,4 @@
 //TODO
-//make a camera that follows the spaceship around
 /*variables */
 public final int MAP_WIDTH = 5000;
 public final int MAP_HEIGHT = 5000;
@@ -19,7 +18,7 @@ public void setup()
     stars[i] = new Star();
   }
   //initializes new Asteriods
-  for(int i=0; i < 100; i++){
+  for(int i=0; i < 1000; i++){
     asteroids.add(new Asteriod());
   }
   //initializes camera
@@ -63,6 +62,11 @@ public void draw()
 }
 
 public void checkForCollisoins(){
+  for(int b = bullets.size()-1; b >=0; b--){
+    if(bullets.get(b).getTime() > 200){
+      bullets.remove(b);
+    }
+  }
   for(int b = bullets.size()-1; b >=0; b--){
     for(int a = asteroids.size()-1; a >=0; a--){
       if(dist(asteroids.get(a).getX(), asteroids.get(a).getY(),bullets.get(b).getX(), bullets.get(b).getY()) < 10){
