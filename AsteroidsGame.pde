@@ -11,7 +11,7 @@ public Camera camera;
 public void setup()
 {
   //your code here
-  size(400, 400, P2D);
+  size(500, 500, P2D);
   background(0);
   //initializes the new stars
   for(int i = 0; i < stars.length; i++){
@@ -35,13 +35,13 @@ keys.put("q", false);
 //draw function.
 public void draw()
 {
+  game();
+}
+public void game(){
   // camera
   translate(-camera.pos.x, -camera.pos.y);
   camera.draw(rustBucket);
   background(0);
-  //shows the Spaceship, and move
-  rustBucket.show();
-  rustBucket.move();
   //shows the stars
   for(int i = 0; i < stars.length; i++){
     stars[i].show();
@@ -56,11 +56,16 @@ public void draw()
     bullets.get(i).show();
     bullets.get(i).move();
   }
+  //shows the Spaceship, and move
+  rustBucket.show();
+  rustBucket.move();
+  //colisions and butons.
   checkForCollisoins();
   whenKeyIsPressed();
-
 }
-
+public void gameOver(){
+  background(0);
+}
 public void checkForCollisoins(){
   for(int b = bullets.size()-1; b >=0; b--){
     if(bullets.get(b).getTime() > 200){
@@ -149,6 +154,8 @@ public void whenKeyIsPressed(){
     rustBucket.setPointDirection((int)(Math.random() * 360));
     rustBucket.setX((int)(Math.random() * 400));
     rustBucket.setY((int)(Math.random() * 400));
+    camera.pos.x = rustBucket.getX() - 250;
+    camera.pos.y = rustBucket.getY() - 250;
   }
   if(keys.get("q") == true){
     rustBucket.pressTheBreak();
