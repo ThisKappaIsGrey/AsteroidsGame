@@ -8,6 +8,7 @@ public Star [] stars = new Star[5000];
 public ArrayList<Bullet> bullets = new ArrayList<Bullet>();
 public HashMap<String, Boolean> keys = new HashMap<String, Boolean>();
 public Camera camera;
+private boolean gameState = true;
 public void setup()
 {
   //your code here
@@ -80,7 +81,12 @@ public void checkForCollisoins(){
         break;
     }
   }
-}
+  }
+  for(int a = asteroids.size()-1; a >=0; a--){
+    if(dist(rustBucket.getX(), rustBucket.getY(), asteroids.get(a).getX(), asteroids.get(a).getY()) < 10){
+      gameState = false;
+    }
+  }
 }
 public void keyPressed(){
   switch(key){
