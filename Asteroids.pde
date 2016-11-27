@@ -1,7 +1,7 @@
 class Asteriod extends Floater{
 private int rotSpeed, s;
   Asteriod(){
-    s = (int)(Math.random() * 2);
+    s = (int)(Math.random() * 3);
     corners = 4;
     int [] xS = {-5*s, 5*s, 5 * s, -5*s};
     int[] yS = {-5*s, -5*s, 5*s, 5*s};

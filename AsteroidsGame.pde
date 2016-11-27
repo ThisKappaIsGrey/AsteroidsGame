@@ -4,11 +4,12 @@ public final int MAP_WIDTH = 5000;
 public final int MAP_HEIGHT = 5000;
 public Spaceship rustBucket = new Spaceship();
 public ArrayList<Asteriod> asteroids = new ArrayList <Asteriod>();
-public Star [] stars = new Star[5000];
+public Star [] stars = new Star[10000];
 public ArrayList<Bullet> bullets = new ArrayList<Bullet>();
 public HashMap<String, Boolean> keys = new HashMap<String, Boolean>();
 public Camera camera;
 private boolean gameState = true;
+public GameSpace gameSpace = new GameSpace();
 public void setup()
 {
   //your code here
@@ -43,6 +44,7 @@ public void game(){
   translate(-camera.pos.x, -camera.pos.y);
   camera.draw(rustBucket);
   background(0);
+  gameSpace.show();
   //shows the stars
   for(int i = 0; i < stars.length; i++){
     stars[i].show();
@@ -66,8 +68,17 @@ public void game(){
 }
 public void gameOver(){
   background(0);
+  if(keys.get(" ") == true){
+    rustBucket.health = 5;
+  }
 }
 public void checkForCollisoins(){
+  for(int a = asteroids.size()-1; a >=0; a--){
+    if(dist(asteroids.get(a).getX(), asteroids.get(a).getY(),rustBucket.getX(), rustBucket.getY()) < 10){
+      rustBucket.health--;
+      asteroids.remove(a);
+    }
+  }
   for(int b = bullets.size()-1; b >=0; b--){
     if(bullets.get(b).getTime() > 200){
       bullets.remove(b);
@@ -158,8 +169,8 @@ public void whenKeyIsPressed(){
     rustBucket.setDirectionX(0);
     rustBucket.setDirectionY(0);
     rustBucket.setPointDirection((int)(Math.random() * 360));
-    rustBucket.setX((int)(Math.random() * 400));
-    rustBucket.setY((int)(Math.random() * 400));
+    rustBucket.setX((int)(Math.random() * MAP_WIDTH));
+    rustBucket.setY((int)(Math.random() * MAP_HEIGHT));
     camera.pos.x = rustBucket.getX() - 250;
     camera.pos.y = rustBucket.getY() - 250;
   }

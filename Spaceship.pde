@@ -1,6 +1,7 @@
 class Spaceship extends Floater
 {
 public final int SPEED_LIMIT;
+public int health;
 public Spaceship(){
       corners = 7;
       int [] xS = {-5, 2, 7, 15, 7, 2, -5};
@@ -14,6 +15,7 @@ public Spaceship(){
       myDirectionY = 0;
       myPointDirection = 0;
       SPEED_LIMIT = 10;
+      health = 5;
     }
 public void move(){
   //Follow the SPeed LImit
