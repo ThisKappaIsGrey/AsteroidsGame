@@ -37,7 +37,12 @@ keys.put("q", false);
 //draw function.
 public void draw()
 {
-  game();
+  if(gameState){
+    game();
+    System.out.println("health: "+ rustBucket.health);
+  }else{
+  gameOver();
+}
 }
 public void game(){
   // camera
@@ -62,13 +67,18 @@ public void game(){
   //shows the Spaceship, and move
   rustBucket.show();
   rustBucket.move();
+  rustBucket.died();
   //colisions and butons.
   checkForCollisoins();
   whenKeyIsPressed();
+  if(rustBucket.health == 0){
+    gameState = false;
+  }
 }
 public void gameOver(){
   background(0);
   if(keys.get(" ") == true){
+    gameState = true;
     rustBucket.health = 5;
   }
 }
