@@ -10,6 +10,7 @@ public HashMap<String, Boolean> keys = new HashMap<String, Boolean>();
 public Camera camera;
 private boolean gameState = true;
 public GameSpace gameSpace = new GameSpace();
+public Minimap minimap = new Minimap();
 public void setup()
 {
   //your code here
