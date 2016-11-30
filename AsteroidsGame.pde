@@ -67,6 +67,8 @@ public void game(){
   //shows the Spaceship, and move
   rustBucket.show();
   rustBucket.move();
+  //minimap
+  minimap.show();
   //colisions and butons.
   checkForCollisoins();
   whenKeyIsPressed();

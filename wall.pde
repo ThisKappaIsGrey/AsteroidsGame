@@ -3,8 +3,6 @@ class GameSpace{
     GameSpace(){
       height = MAP_HEIGHT;
       width  = MAP_WIDTH;
-      x = 0;
-      y = 0;
     }
     void show(){
       fill(0, 0, 0);

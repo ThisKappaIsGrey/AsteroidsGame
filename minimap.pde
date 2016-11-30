@@ -1,6 +1,8 @@
 class Minimap{
 public Minimap(){}
 public void show(){
-	rect(rustBucket.getX()-200, rustBucket.getY() - 250, 200, 200);
+	fill(255);
+	rect(rustBucket.getX() + 150, rustBucket.getY() - 250, 100, 100);
+	
 }
 }
