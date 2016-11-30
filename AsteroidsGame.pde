@@ -40,7 +40,6 @@ public void draw()
 {
   if(gameState){
     game();
-    System.out.println("health: "+ rustBucket.health);
   }else{
   gameOver();
 }
@@ -68,7 +67,6 @@ public void game(){
   //shows the Spaceship, and move
   rustBucket.show();
   rustBucket.move();
-  rustBucket.died();
   //colisions and butons.
   checkForCollisoins();
   whenKeyIsPressed();
