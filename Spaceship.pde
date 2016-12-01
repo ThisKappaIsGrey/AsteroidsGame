@@ -14,7 +14,7 @@ public Spaceship(){
       myDirectionX = 0;
       myDirectionY = 0;
       myPointDirection = 0;
-      SPEED_LIMIT = 10;
+      SPEED_LIMIT = 6;
       health = 5;
     }
 public void move(){

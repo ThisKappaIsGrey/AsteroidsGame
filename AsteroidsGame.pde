@@ -40,6 +40,7 @@ public void draw()
 {
   if(gameState){
     game();
+    //System.out.println("Health: " + rustBucket.health);
   }else{
   gameOver();
 }
@@ -72,6 +73,7 @@ public void game(){
   //colisions and butons.
   checkForCollisoins();
   whenKeyIsPressed();
+  stayWitinMap();
   if(rustBucket.health == 0){
     gameState = false;
   }
@@ -108,6 +110,13 @@ public void checkForCollisoins(){
     if(dist(rustBucket.getX(), rustBucket.getY(), asteroids.get(a).getX(), asteroids.get(a).getY()) < 10){
       gameState = false;
     }
+  }
+}
+public void stayWitinMap(){
+  if((rustBucket.getX() < 0 || rustBucket.getX() > MAP_WIDTH) || (rustBucket.getY() < 0 || rustBucket.getY() > MAP_HEIGHT)){
+    rustBucket.health--;
+    rustBucket.setDirectionX(0);
+    rustBucket.setDirectionY(0);
   }
 }
 public void keyPressed(){
