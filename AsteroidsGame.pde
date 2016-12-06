@@ -118,6 +118,11 @@ public void stayWitinMap(){
     rustBucket.setDirectionX(0);
     rustBucket.setDirectionY(0);
   }
+   for(int a = asteroids.size()-1; a >=0; a--){
+    if((asteroids.get(a).getX() > MAP_WIDTH || asteroids.get(a).getX() < 0) || (asteroids.get(a).getY() > MAP_HEIGHT || asteroids.get(a).getY() < 0)){
+      asteroids.remove(a);
+    }
+  }
 }
 public void keyPressed(){
   switch(key){
